@@ -10,15 +10,12 @@ pipeline {
             steps {
                 echo 'Stage 1: Build - Using Maven to compile and package the code.'
                 echo 'Tool: Maven'
-                // Example: sh 'mvn clean package'
             }
         }
         stage('Unit and Integration Tests') {
             steps {
                 echo 'Stage 2: Unit and Integration Tests - Running unit tests to ensure code functions as expected and integration tests to ensure components work together.'
                 echo 'Tools: JUnit for unit tests, TestNG for integration tests'
-                // Example: sh 'mvn test'
-                // Example: sh 'mvn verify'
             }
             post {
                 success {
@@ -49,14 +46,12 @@ pipeline {
             steps {
                 echo 'Stage 3: Code Analysis - Analyzing code to ensure it meets industry standards.'
                 echo 'Tool: SonarQube'
-                // Example: sh 'sonar-scanner'
             }
         }
         stage('Security Scan') {
             steps {
                 echo 'Stage 4: Security Scan - Performing a security scan to identify vulnerabilities.'
                 echo 'Tool: OWASP ZAP'
-                // Example: sh 'zap-cli quick-scan http://yourapp.com'
             }
             post {
                 success {
@@ -87,21 +82,18 @@ pipeline {
             steps {
                 echo 'Stage 5: Deploy to Staging - Deploying the application to a staging server.'
                 echo 'Tool: AWS CLI'
-                // Example: sh 'aws s3 cp target/yourapp.jar s3://your-staging-bucket/'
             }
         }
         stage('Integration Tests on Staging') {
             steps {
                 echo 'Stage 6: Integration Tests on Staging - Running integration tests on the staging environment to ensure the application functions as expected.'
                 echo 'Tool: Selenium'
-                // Example: sh 'selenium-side-runner -s http://staging.yourapp.com'
             }
         }
         stage('Deploy to Production') {
             steps {
                 echo 'Stage 7: Deploy to Production - Deploying the application to a production server.'
                 echo 'Tool: AWS CLI'
-                // Example: sh 'aws s3 cp target/yourapp.jar s3://your-production-bucket/'
             }
         }
     }
